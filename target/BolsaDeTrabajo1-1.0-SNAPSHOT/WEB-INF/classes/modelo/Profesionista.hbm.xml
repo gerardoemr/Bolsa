@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 6/03/2018 02:07:24 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.Profesionista" table="profesionista" schema="public" optimistic-lock="version">
+        <id name="idPro" type="int">
+            <column name="id_pro" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" />
+        </property>
+        <property name="correo" type="string">
+            <column name="correo" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="telefono" />
+        </property>
+        <property name="contrasena" type="string">
+            <column name="contrasena" />
+        </property>
+        <property name="nacionalidad" type="string">
+            <column name="nacionalidad" />
+        </property>
+        <property name="carrera" type="string">
+            <column name="carrera" />
+        </property>
+        <set name="habilidadeses" table="habilidades" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_p" not-null="true" />
+            </key>
+            <one-to-many class="modelo.Habilidades" />
+        </set>
+        <set name="explaborals" table="explaboral" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_pro" not-null="true" />
+            </key>
+            <one-to-many class="modelo.Explaboral" />
+        </set>
+        <set name="formacions" table="formacion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_p" not-null="true" />
+            </key>
+            <one-to-many class="modelo.Formacion" />
+        </set>
+        <set name="postulars" table="postular" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_p" not-null="true" />
+            </key>
+            <one-to-many class="modelo.Postular" />
+        </set>
+    </class>
+</hibernate-mapping>
