@@ -6,7 +6,7 @@
     <class name="modelo.Profesionista" table="profesionista" schema="public" optimistic-lock="version">
         <id name="idPro" type="int">
             <column name="id_pro" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="nombre" type="string">
             <column name="nombre" />

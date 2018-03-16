@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Empresas</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+            <p:dataScroller value="#{verEmpresa.empresas}" var="empresa" >
+                <h:outputText value="Nombre: " style="font-weight: bold" />
+                <h:outputText value="#{empresa.nombre}" style="font-weight: bold" />
+ 
+                <h:outputText value="Contacto: " style="font-weight: bold"/>
+                <h:outputText value="#{empresa.contacto}" style="font-weight: bold"/>
+            </p:dataScroller>
+            
+            <h:form>
+                <h:outputText value="Nombre:" />
+                <p:inputText value="#{agregarEmpresa.nombre}" placeholder="nombre"/>
+                <br/>
+                <h:outputText value="Oficinas:" />
+                <p:inputText value="#{agregarEmpresa.oficinas}" placeholder="oficinas"/>
+                <br/>
+                <h:outputText value="Fundación:" />
+                <p:inputText value="#{agregarEmpresa.fundacion}" placeholder="fundacion"/>
+                <br/>
+                <h:outputText value="Número de empleados:" />
+                <p:inputText value="#{agregarEmpresa.numempleados}" placeholder="num"/>
+                <br/>
+                <h:outputText value="Contacto:" />
+                <p:inputText value="#{agregarEmpresa.contacto}" placeholder="contacto"/>
+                <br/>
+                <h:outputText value="Presidente:" />
+                <p:inputText value="#{agregarEmpresa.president}" placeholder="presidente"/>
+                <br/>
+                <p:commandButton value=" Aceptar " action="#{agregarEmpresa.agregaEmpresa()}" />
+            </h:form> 
+           
+        </h:body>
+
+    </f:view>
+</html>

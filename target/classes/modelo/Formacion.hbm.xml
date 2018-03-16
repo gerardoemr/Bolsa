@@ -6,7 +6,7 @@
     <class name="modelo.Formacion" table="formacion" schema="public" optimistic-lock="version">
         <id name="idF" type="int">
             <column name="id_f" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="profesionista" class="modelo.Profesionista" fetch="select">
             <column name="id_p" not-null="true" />
