@@ -1,4 +1,5 @@
 package controlador;
+import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -9,7 +10,7 @@ import modelo.EmpresaDAO;
 
 @ManagedBean
 @ViewScoped
-public class VerEmpresa {
+public class VerEmpresa implements Serializable {
     private List<Empresa> empresas;
 
     public List<Empresa> getEmpresas() {

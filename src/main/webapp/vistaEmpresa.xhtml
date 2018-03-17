@@ -30,7 +30,7 @@
                 <p:inputText value="#{agregarEmpresa.oficinas}" placeholder="oficinas"/>
                 <br/>
                 <h:outputText value="Fundación:" />
-                <p:inputText value="#{agregarEmpresa.fundacion}" placeholder="fundacion"/>
+                <p:calendar value="#{agregarEmpresa.fundacion}" placeholder="fundacion"/>
                 <br/>
                 <h:outputText value="Número de empleados:" />
                 <p:inputText value="#{agregarEmpresa.numempleados}" placeholder="num"/>
@@ -42,7 +42,14 @@
                 <p:inputText value="#{agregarEmpresa.president}" placeholder="presidente"/>
                 <br/>
                 <p:commandButton value=" Aceptar " action="#{agregarEmpresa.agregaEmpresa()}" />
-            </h:form> 
+            </h:form>
+            
+            <h:form>
+                <h:outputText value ="Escriba el código de la empresa a eliminar"/>
+                <p:inputText value ="#{eliminarEmpresa.id}" placeholder ="id"/>
+                <br/>
+                <p:commandButton value=" Aceptar " action="#{eliminarEmpresa.eliminaEmpresa()}" />
+            </h:form>
            
         </h:body>
 
