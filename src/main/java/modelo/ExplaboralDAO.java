@@ -70,4 +70,34 @@ public class ExplaboralDAO {
         }
     }
     
+        public void elimina(String id){
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        try{
+            tx = session.beginTransaction();
+            
+            String hql = "from Explaboral where Idexplaboral = " + id;
+            
+            Query query = session.createQuery(hql);
+            
+            List<Explaboral> l = query.list();
+            
+            Explaboral exp = l.get(0);
+            
+            session.delete(exp);
+            
+            tx.commit();
+            
+        }catch(Exception e){
+            if (tx!=null)
+            {
+                tx.rollback();
+            }
+           e.printStackTrace(); 
+        }finally{
+            //cerramos la session
+            session.close();
+        }
+    }
+    
 }

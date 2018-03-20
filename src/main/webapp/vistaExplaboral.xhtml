@@ -12,19 +12,28 @@
                 <title>Empresas</title>
             </f:facet>
         </h:head>
-
+        <br/>
+        <br/>
         <h:body>
+            Experiencia laboral de Profesionistas:
+            <br/>
             <p:dataScroller value="#{verExplaboral.experiencias}" var="experiencia" >
+                <h:outputText value="ID: " style="font-weight: bold"/>
+                <h:outputText value="#{experiencia.idexplaboral}" style="font-weight: normal"/>
+                <h:outputText value="  " style="font-weight: bold"/>
                 <h:outputText value="Empresa: " style="font-weight: bold" />
                 <h:outputText value="#{experiencia.empresa}" style="font-weight: normal" />
                 <h:outputText value="  " style="font-weight: bold"/>
                 <h:outputText value="Cargo: " style="font-weight: bold"/>
                 <h:outputText value="#{experiencia.cargo}" style="font-weight: normal"/>
+                <h:outputText value="  " style="font-weight: bold"/>
             </p:dataScroller>
         </h:body>
-        
+        <br/>
+        <br/>
         <h:form>
                 Agregar experiencia laboral...
+                <br/>
                 <h:outputText value="Cargo:" />
                 <p:inputText value="#{agregarExplaboral.cargo}" placeholder="cargo"/>
                 <br/>
@@ -42,5 +51,14 @@
                 <br/>
                 <p:commandButton value=" Aceptar " action="#{agregarExplaboral.agregaExplaboral()}" />
             </h:form>
+            <br/>
+            <br/>
+            <h:form>
+                Escriba el ID de la experiencia a eliminar...
+                <p:inputText value ="#{eliminarExplaboral.id}" placeholder ="id"/>
+                <br/>
+                <p:commandButton value=" Aceptar " action="#{eliminarExplaboral.eliminaExplaboral()}" />
+            </h:form>
+        
     </f:view>
 </html>
