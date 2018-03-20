@@ -1,5 +1,6 @@
 package modelo;
 
+import java.util.Date;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -88,6 +89,42 @@ public class EmpresaDAO {
             //cerramos la session
             session.close();
         }
+    }
+    
+    public void actualiza(String id, String n, String of, Date fun, Short empl, String con, String pres){
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+
+            String hql = "from Empresa where idE = " + id;
+
+            Query query = session.createQuery(hql);
+
+            List<Empresa> l = query.list();
+
+            Empresa em = l.get(0);
+            
+            //Actualiza los atributos
+            if (n.length() > 0) em.setNombre(n);
+            if (of.length() > 0 ) em.setOficinas(of);
+            if (fun != null) em.setFundacion(fun);
+            if (empl != null) em.setNumempleados(empl);
+            if (con.length() > 0) em.setContacto(con);
+            if (pres.length() > 0) em.setPresident(pres);
+           
+           session.update(em);
+          
+           tx.commit();
+        }
+        catch (Exception e) {
+           if (tx!=null){ 
+               tx.rollback();
+           }
+           e.printStackTrace(); 
+        }finally {
+           session.close();
+        }  
     }
     
     
