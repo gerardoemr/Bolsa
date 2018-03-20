@@ -1,7 +1,10 @@
+C:\Users\Admin\Documents\NetBeansProjects\BolsaDeTrabajo1\src\main\java\controlador\AgregarExplaboral.java
 C:\Users\Admin\Documents\NetBeansProjects\BolsaDeTrabajo1\src\main\java\controlador\AgregarEmpresa.java
 C:\Users\Admin\Documents\NetBeansProjects\BolsaDeTrabajo1\src\main\java\modelo\FormacionDAO.java
+C:\Users\Admin\Documents\NetBeansProjects\BolsaDeTrabajo1\src\main\java\controlador\EliminarExplaboral.java
 C:\Users\Admin\Documents\NetBeansProjects\BolsaDeTrabajo1\src\main\java\modelo\ExplaboralDAO.java
 C:\Users\Admin\Documents\NetBeansProjects\BolsaDeTrabajo1\src\main\java\modelo\EmpresaDAO.java
+C:\Users\Admin\Documents\NetBeansProjects\BolsaDeTrabajo1\src\main\java\controlador\ActualizarExplaboral.java
 C:\Users\Admin\Documents\NetBeansProjects\BolsaDeTrabajo1\src\main\java\controlador\VerEmpresa.java
 C:\Users\Admin\Documents\NetBeansProjects\BolsaDeTrabajo1\src\main\java\modelo\HabilidadesDAO.java
 C:\Users\Admin\Documents\NetBeansProjects\BolsaDeTrabajo1\src\main\java\modelo\Profesionista.java
@@ -13,6 +16,7 @@ C:\Users\Admin\Documents\NetBeansProjects\BolsaDeTrabajo1\src\main\java\modelo\F
 C:\Users\Admin\Documents\NetBeansProjects\BolsaDeTrabajo1\src\main\java\modelo\Vacante.java
 C:\Users\Admin\Documents\NetBeansProjects\BolsaDeTrabajo1\src\main\java\modelo\Explaboral.java
 C:\Users\Admin\Documents\NetBeansProjects\BolsaDeTrabajo1\src\main\java\modelo\ProfesionistaDAO.java
+C:\Users\Admin\Documents\NetBeansProjects\BolsaDeTrabajo1\src\main\java\controlador\VerExplaboral.java
 C:\Users\Admin\Documents\NetBeansProjects\BolsaDeTrabajo1\src\main\java\modelo\HibernateUtil.java
 C:\Users\Admin\Documents\NetBeansProjects\BolsaDeTrabajo1\src\main\java\modelo\PostularDAO.java
 C:\Users\Admin\Documents\NetBeansProjects\BolsaDeTrabajo1\src\main\java\modelo\VacanteDAO.java

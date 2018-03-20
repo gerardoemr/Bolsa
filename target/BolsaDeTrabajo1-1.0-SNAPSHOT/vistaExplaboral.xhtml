@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Empresas</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+            <p:dataScroller value="#{verExplaboral.experiencias}" var="experiencia" >
+                <h:outputText value="Empresa: " style="font-weight: bold" />
+                <h:outputText value="#{experiencia.empresa}" style="font-weight: normal" />
+                <h:outputText value="  " style="font-weight: bold"/>
+                <h:outputText value="Cargo: " style="font-weight: bold"/>
+                <h:outputText value="#{experiencia.cargo}" style="font-weight: normal"/>
+            </p:dataScroller>
+        </h:body>
+        
+        <h:form>
+                Agregar experiencia laboral...
+                <h:outputText value="Cargo:" />
+                <p:inputText value="#{agregarExplaboral.cargo}" placeholder="cargo"/>
+                <br/>
+                <h:outputText value="Empresa:" />
+                <p:inputText value="#{agregarExplaboral.empresa}" placeholder="empresa"/>
+                <br/>
+                <h:outputText value="Fecha de inicio:" />
+                <p:calendar value="#{agregarExplaboral.periodoini}" placeholder="periodoini"/>
+                <br/>
+                <h:outputText value="Fecha de término:" />
+                <p:calendar value="#{agregarExplaboral.periodoter}" placeholder="periodoter"/>
+                <br/>
+                <h:outputText value="ID del profesionista:" />
+                <p:inputText value="#{agregarExplaboral.idpro}" placeholder="idpro"/>
+                <br/>
+                <p:commandButton value=" Aceptar " action="#{agregarExplaboral.agregaExplaboral()}" />
+            </h:form>
+    </f:view>
+</html>
