@@ -1,5 +1,6 @@
 package modelo;
 
+import java.util.Date;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -99,5 +100,41 @@ public class ExplaboralDAO {
             session.close();
         }
     }
+        
+    public void actualiza(String id, String cargo, String empresa, Date ini, Date ter){
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        
+        try {
+            tx = session.beginTransaction();
+
+            String hql = "from Explaboral where Idexplaboral = " + id;
+
+            Query query = session.createQuery(hql);
+
+            List<Explaboral> l = query.list();
+
+            Explaboral exp = l.get(0);
+            
+            //Actualiza los atributos
+            if(cargo.length() > 0) exp.setCargo(cargo);
+            if(empresa.length() > 0) exp.setEmpresa(empresa);
+            if(ini != null) exp.setPeriodoini(ini);
+            if(ter != null) exp.setPeriodoter(ter);
+           
+           session.update(exp);
+          
+           tx.commit();
+        }
+        catch (Exception e) {
+           if (tx!=null){ 
+               tx.rollback();
+           }
+           e.printStackTrace(); 
+        }finally {
+           session.close();
+        }  
+    }
+        
     
 }
